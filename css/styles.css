@@ -139,16 +139,15 @@ body {
 .header-container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 
   padding-top: 24px;
   padding-bottom: 24px;
 }
 
-/*
 .header-navigation {
-  display: flex;
-  align-items: center;
-}*/
+  display: none;
+}
 .logo-header {
   font-family: 'Raleway', sans-serif;
   font-weight: var(--first-font-weight);
@@ -157,14 +156,15 @@ body {
   line-height: var(--second-line-height);
   color: var(--second-color);
   letter-spacing: var(--second-letter-spacing);
-
-  margin-right: auto;
 }
 .piece {
   color: var(--fourth-color);
 }
 
 .header-list {
+  display: none;
+}
+.adress {
   display: none;
 }
 /*ul*
@@ -188,7 +188,16 @@ body {
   padding: 0;
   line-height: 0;
 
-  margin-left: auto;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.mobil-menu-open.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opasity 500ms linear, visibility 500ms linear;
 }
 /*
 .adress {
@@ -259,11 +268,45 @@ body {
 }*/
 .mobil-menu-open-icon {
   display: inline-block;
-  width: 1em;
-  height: 1em;
+  width: 32px;
+  height: 22px;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+/*mobil-menu*/
+.mobile-menu {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 1000;
+  top: 0;
+  left: 0;
+  background-color: #ffffff;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  /*
+  width: 428px;
+  height: 796px;*/
+}
+/*дополнительный класс,чтоб спозиционировать кнопку с крестиком */
+.mobile-menu-container {
+  position: relative;
+  padding-top: 24px;
+  padding-bottom: 40px;
+  padding-left: 40px;
+}
+/*кнопка с крестиком в мобильном меню,споз-я относительно доп класса в контейнере*/
+.mobile-menu-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 15px;
+
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
 }
 /*======================/HEADER==========================*/
 /*======================HERO=============================*/
