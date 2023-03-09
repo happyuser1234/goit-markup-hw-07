@@ -35,13 +35,33 @@ img {
   padding-bottom: 120px;
 }
 
-/*контейнер*/
+/*контейнер*
 .container {
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
   margin-left: auto;
   margin-right: auto;
+}
+*/
+.container {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+@media screen and (min-width: 480px) {
+  .container {
+    width: 428px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1158px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
 }
 
 body {
@@ -107,7 +127,7 @@ body {
 }
 
 /*======================HEADER===========================*/
-.header {
+/*.header {
   border-bottom: 1px solid var(--sixth-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
@@ -133,13 +153,13 @@ body {
   color: var(--fourth-color);
 }
 
-/*ul*/
+/*ul*
 .header-list {
   display: flex;
   margin-left: 76px;
 }
 
-/*li*/
+/*li*
 .header-item {
   margin-right: 40px;
 }
@@ -159,7 +179,7 @@ body {
   margin-right: 0;
 }
 
-/*a ccылка для studio portfolio contacts*/
+/*a ccылка для studio portfolio contacts*
 .header-link {
   display: block;
   padding-top: 24px;
@@ -175,7 +195,7 @@ body {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*линия-подчеркивание внизу у ссылки Studio*/
+/*линия-подчеркивание внизу у ссылки Studio*
 .current::after {
   content: '';
 
@@ -195,7 +215,7 @@ body {
   color: var(--third-color);
 }
 
-/*a ccылка для емейла и телефона */
+/*a ccылка для емейла и телефона *
 .header-contact-link {
   line-height: var(--first-line-height);
   letter-spacing: var(--first-letter-spacing);
