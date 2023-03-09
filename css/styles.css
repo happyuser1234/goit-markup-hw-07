@@ -44,23 +44,25 @@ img {
   margin-right: auto;
 }
 */
+
+/*container для mobile,tablet,desktop*/
 .container {
-  padding-left: 16px;
-  padding-right: 16px;
+  max-width: 428px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
+
 @media screen and (min-width: 480px) {
   .container {
-    width: 428px;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 428px;
   }
 }
 
 @media screen and (min-width: 1200px) {
   .container {
-    width: 1158px;
-    padding-left: 15px;
-    padding-right: 15px;
+    max-width: 1158px;
   }
 }
 
@@ -131,11 +133,14 @@ body {
   border-bottom: 1px solid var(--sixth-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-}
+}*/
 .header-container {
   display: flex;
   align-items: center;
+  align-items: space-between;
 }
+
+/*
 .header-navigation {
   display: flex;
   align-items: center;
@@ -151,8 +156,11 @@ body {
 }
 .piece {
   color: var(--fourth-color);
-}
+}*/
 
+.header-list {
+  display: none;
+}
 /*ul*
 .header-list {
   display: flex;
@@ -168,8 +176,13 @@ body {
 }
 .adress {
   margin-left: auto;
-}
+}*/
+
 .header-contact {
+  display: none;
+}
+
+/*.header-contact {
   display: flex;
 }
 .header-contact-item {
@@ -226,6 +239,14 @@ body {
 }
 .header-contact-link:hover {
   color: var(--third-color);
+}*/
+.mobil-menu-open-icon {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
 }
 /*======================/HEADER==========================*/
 /*======================HERO=============================*/
