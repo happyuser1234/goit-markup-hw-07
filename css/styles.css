@@ -45,27 +45,6 @@ img {
 }
 */
 
-/*container для mobile,tablet,desktop*/
-.container {
-  max-width: 428px;
-  padding-left: 15px;
-  padding-right: 15px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media screen and (min-width: 480px) {
-  .container {
-    max-width: 428px;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .container {
-    max-width: 1158px;
-  }
-}
-
 body {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
@@ -134,17 +113,42 @@ body {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }*/
+
+/*container для mobile,tablet,desktop*/
+.container {
+  max-width: 428px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 480px) {
+  .container {
+    max-width: 428px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    max-width: 1158px;
+  }
+}
+
+/*div в кот сидят лого и кнопка-гамбургер*/
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+
+  padding-top: 24px;
+  padding-bottom: 24px;
 }
 
 /*
 .header-navigation {
   display: flex;
   align-items: center;
-}
+}*/
 .logo-header {
   font-family: 'Raleway', sans-serif;
   font-weight: var(--first-font-weight);
@@ -153,10 +157,12 @@ body {
   line-height: var(--second-line-height);
   color: var(--second-color);
   letter-spacing: var(--second-letter-spacing);
+
+  margin-right: auto;
 }
 .piece {
   color: var(--fourth-color);
-}*/
+}
 
 .header-list {
   display: none;
@@ -173,7 +179,18 @@ body {
 }
 .header-item:last-child {
   margin-right: 0;
+}*/
+
+/*кнопка-hamburger*/
+.mobil-menu-open {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  line-height: 0;
+
+  margin-left: auto;
 }
+/*
 .adress {
   margin-left: auto;
 }*/
