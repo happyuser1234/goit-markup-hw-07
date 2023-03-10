@@ -94,6 +94,7 @@ body {
 
   --typical-font-weight: 500;
   --first-font-weight: 800;
+  --second-font-weight: 700;
 
   --first-letter-spacing: 0.02em;
   --second-letter-spacing: 0.03em;
@@ -182,7 +183,14 @@ body {
 }*/
 
 /*кнопка-hamburger*/
-.mobil-menu-open {
+.mobile-menu-btn {
+  display: inline-block;
+  width: 32px;
+  height: 22px;
+  stroke-width: 0;
+  stroke: currentColor;
+  fill: currentColor;
+
   background-color: transparent;
   border: none;
   padding: 0;
@@ -192,8 +200,8 @@ body {
   visibility: hidden;
   pointer-events: none;
 }
-
-.mobil-menu-open.is-open {
+/*когда нажимаешь на кнопку-hamburger,mobil-menu появляется*/
+.mobile-menu-btn.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
@@ -204,6 +212,7 @@ body {
   margin-left: auto;
 }*/
 
+/*прячем header-contact*/
 .header-contact {
   display: none;
 }
@@ -266,14 +275,7 @@ body {
 .header-contact-link:hover {
   color: var(--third-color);
 }*/
-.mobil-menu-open-icon {
-  display: inline-block;
-  width: 32px;
-  height: 22px;
-  stroke-width: 0;
-  stroke: currentColor;
-  fill: currentColor;
-}
+
 /*mobil-menu*/
 .mobile-menu {
   position: fixed;
@@ -290,6 +292,7 @@ body {
   width: 428px;
   height: 796px;*/
 }
+
 /*дополнительный класс,чтоб спозиционировать кнопку с крестиком */
 .mobile-menu-container {
   position: relative;
@@ -308,6 +311,37 @@ body {
   padding: 0;
   line-height: 0;
 }
+
+.mobile-menu-items {
+  margin-bottom: 284px;
+}
+/*ul для mobile-menu*/
+.mobile-menu-items {
+  padding-top: 32px;
+  list-style: none;
+}
+/*стили для a,которая сидит в li мобильного меню */
+.mobile-menu-link {
+  margin-bottom: 40px;
+
+  font-size: var(--fourth-font-size);
+  line-height: var(--fifth-line-height);
+  font-weight: var(--second-font-weight);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*у последней a,кот сидит в  Li margin-bottom:284px*/
+.mobile-menu-items .mobil-menu-link:last-child {
+  margin-bottom: 284px;
+}
+
+.mobile-menu-link:hover,
+.mobile-menu-link:focus {
+  color: #404bbf;
+}
+
 /*======================/HEADER==========================*/
 /*======================HERO=============================*/
 

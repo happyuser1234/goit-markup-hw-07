@@ -41,8 +41,10 @@
             </li>
           </ul>
         </nav>
-        <button type="button" class="mobil-menu-open" js-open-menu>
-          <svg class="mobil-menu-open-icon" width="32" height="22">
+
+         <!--кнопка-гамбургер(открытие мобильного меню)-->
+        <button type="button" class="mobile-menu-btn" js-open-menu>
+          <svg class="mobile-menu-btn-icon" width="32" height="22">
             <use href="./images/sprite.svg#icon-hamburger"></use>
           </svg>
         </button>
@@ -64,6 +66,7 @@
           </ul>
         </address>
       </div>
+        <!--мобильное меню-->
       <div class="mobile-menu" js-menu-container>
         <div class="container mobile-menu-container">
           <buttom class="mobile-menu-close-btn" js-close-menu>
@@ -71,13 +74,31 @@
               <use href="./images/sprite.svg#icon-close"></use>
             </svg>
           </buttom>
-          <ul>
-            <li href=""></li>
-            <li href=""></li>
-            <li href=""></li>
-            <li href=""></li>
-            <li href=""></li>
-            <li href=""></li>
+          <div class="mobile-menu-set">
+            <ul class="mobile-menu-items">
+            <li>
+              <a class="mobile-menu-link link" href="./index.html">Studio</a>
+            </li>
+            <li>
+              <a class="mobile-menu-link link" href="./portfolio.html">Portfolio</a>
+            </li>
+            <li>
+              <a class="mobile-menu-link link" href=" ">Contacts</a>
+            </li>
+          </div>
+          
+            <ul>
+              <li>
+              <a class="mobile-menu-contact-link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+            </li>
+            <li>
+              <a class="mobile-menu-contact-link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+            </li>
+            </ul>
+            
+            <li>
+              <a href=""></a>
+            </li>
           </ul></div>
         
       </div>
@@ -606,6 +627,7 @@
         </form>
       </div>
     </div>
-    <script src="./js/modal.js"></script>
+    <script src="./js/modal.js"></script>---------------------------->
+    <script src=".js/mobile-menu.js"></script>
   </body>
 </html>
