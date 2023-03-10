@@ -43,7 +43,7 @@
         </nav>
 
          <!--кнопка-гамбургер(открытие мобильного меню)-->
-        <button type="button" class="mobile-menu-btn" js-open-menu>
+        <button type="button" class="js-open-menu">
           <svg class="mobile-menu-btn-icon" width="32" height="22">
             <use href="./images/sprite.svg#icon-hamburger"></use>
           </svg>
@@ -66,20 +66,20 @@
           </ul>
         </address>
       </div>
-        <!--мобильное меню-->
-      <div class="mobile-menu" js-menu-container>
+        <!--мобильное меню(контейнер в котором сидит все)-->
+      <div class="js-menu-container">
         <div class="container mobile-menu-container">
           <div class="mobile-menu-crose-btn">
-            <buttom class="mobile-menu-close-btn" js-close-menu>
+            <buttom class="js-close-menu">
             <svg class="mobile-menu-close-icon" width="8" height="8">
               <use href="./images/sprite.svg#icon-close"></use>
             </svg>
           </buttom>
         </div>
 
-           <!--список ссылок на страницы(Studio,Portfolio,Contacts) сайта-->
-          <div class="mobile-menu-set">
-            <ul class="mobile-menu-items">
+        <!--список ссылок на страницы(Studio,Portfolio,Contacts) сайта-->
+        <div class="mobile-menu-set">
+          <ul class="mobile-menu-items">
             <li class="mobile-menu-item">
               <a class="mobile-menu-link link" href="./index.html">Studio</a>
             </li>
@@ -89,53 +89,58 @@
             <li class="mobile-menu-item">
               <a class="mobile-menu-link link" href=" ">Contacts</a>
             </li>
-          </div>
-            <!--список ссылок на контакты-->
-          <div class="mobile-menu-contact-tel">
-            <a class="mobile-menu-contact-tel-link link" href="tel:+110001111111">+11 (000) 111-11-11</a>
-          </div>
-          <div сlass="mobile-menu-contact-mailto">
-            <a class="mobile-menu-contact-mailto-link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
-          </div>
-
-             <!--обвертка в которой сидят ссылки на соцсети-->
-          <div>
-             <!--список(ul) ссылок соцсетей в mobile-menu-->
-            <ul class="mobile-menu-list-icon">
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-instagram-2"></use>
-                  </svg>
-                </a>
-              </li>
-              
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-twitter-1"></use>
-                  </svg>
-                </a>
-              </li>
-              
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-facebook-1"></use>
-                  </svg>
-                </a>
-              </li>
-
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-linkedin-1"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
+          </ul>
         </div>
+
+        <div class="mobile-menu-contact">
+          <ul>
+            <li class="mobile-menu-contact-tel">
+              <a class="mobile-menu-contact-tel-link link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+            </li>
+            <li>
+              <a class="mobile-menu-contact-mailto-link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+            </li>
+          </ul>
+        </div>
+        
+        <!--обвертка в которой сидят ссылки на соцсети-->
+        <div>
+           <!--список(ul) ссылок соцсетей в mobile-menu-->
+          <ul class="mobile-menu-list-icon">
+            <li class="mobile-menu-item-icon">
+              <a class="mobile-menu-link-icon" href="#">
+                <svg class="mobile-menu-icon" width="16" height="16">
+                  <use href="./images/sprite.svg#icon-instagram-2"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="mobile-menu-item-icon">
+              <a class="mobile-menu-link-icon" href="#">
+                <svg class="mobile-menu-icon" width="16" height="16">
+                  <use href="./images/sprite.svg#icon-twitter-1"></use>
+                </svg>
+              </a>
+            </li>
+              
+            <li class="mobile-menu-item-icon">
+              <a class="mobile-menu-link-icon" href="#">
+                <svg class="mobile-menu-icon" width="16" height="16">
+                  <use href="./images/sprite.svg#icon-facebook-1"></use>
+                </svg>
+              </a>
+            </li>
+
+            <li class="mobile-menu-item-icon">
+              <a class="mobile-menu-link-icon" href="#">
+                <svg class="mobile-menu-icon" width="16" height="16">
+                  <use href="./images/sprite.svg#icon-linkedin-1"></use>
+                </svg>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </header>
     <main>
       <!----------HERO------------------------------------------------
@@ -662,6 +667,6 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>---------------------------->
-    <script src=".js/mobile-menu.js"></script>
+    <script src="./js/mobile-menu.js"></script>
   </body>
 </html>

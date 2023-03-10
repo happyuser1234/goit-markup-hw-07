@@ -146,9 +146,6 @@ body {
   padding-bottom: 24px;
 }
 
-.header-navigation {
-  display: none;
-}
 .logo-header {
   font-family: 'Raleway', sans-serif;
   font-weight: var(--first-font-weight);
@@ -183,7 +180,7 @@ body {
 }*/
 
 /*кнопка-hamburger*/
-.mobile-menu-btn {
+.js-open-menu {
   display: inline-block;
   width: 32px;
   height: 22px;
@@ -194,19 +191,8 @@ body {
   background-color: transparent;
   border: none;
   padding: 0;
-  line-height: 0;
+}
 
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-}
-/*когда нажимаешь на кнопку-hamburger,mobil-menu появляется*/
-.mobile-menu-btn.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-  transition: opasity 500ms linear, visibility 500ms linear;
-}
 /*
 .adress {
   margin-left: auto;
@@ -276,36 +262,42 @@ body {
   color: var(--third-color);
 }*/
 
-/*mobil-menu*/
-.mobile-menu {
+/*КОНТЕЙНЕР в котором находится все мобильное меню*/
+.js-menu-container {
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 1000;
   top: 0;
   left: 0;
+  transform: translateY(-100%);
+
   background-color: #ffffff;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /*
   width: 428px;
   height: 796px;*/
 }
+.js-menu-container.is-open {
+  transform: translateY(0);
+}
 
-/*дополнительный класс,чтоб спозиционировать кнопку с крестиком */
+/*дополнительный класс в div-контейнере-обвертке,чтоб спозиционировать кнопку с крестиком */
 .mobile-menu-container {
   position: relative;
   padding-top: 24px;
   padding-bottom: 40px;
   padding-left: 40px;
 }
-/*div(чтоб отодвинуть список) в кот сидит кнопка(крестик)*/
+/*div(чтоб отодвинуть нижний список), в кот сидит кнопка(крестик)*/
 .mobile-menu-crose-btn {
   margin-bottom: 32px;
 }
 /*кнопка с крестиком в мобильном меню,споз-я относительно доп класса в контейнере*/
-.mobile-menu-close-btn {
+.js-close-menu {
   display: flex;
   width: 24px;
   height: 24px;
@@ -344,31 +336,26 @@ body {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-/*у последней Li margin-bottom:284px*/
+/*у последней Li margin-bottom:0*/
 .mobile-menu-items .mobil-menu-item:last-child {
   margin-bottom: 0;
 }
 /*меняет цвет при ховере и фокусе*/
 .mobile-menu-link:hover,
 .mobile-menu-link:focus {
-  color: #404bbf;
+  color: var(--third-color);
 }
-/*div в котором сидят tel и mailto*/
-.mobile-menu-contact-tel {
+/*отстут*/
+.mobile-menu-contact {
   margin-bottom: 48px;
 }
 
 .mobile-menu-contact-tel-link {
-  font-weight: 700;
+  font-weight: var(--second-font-weight);
   font-size: var(--fourth-font-size);
   line-height: var(--fifth-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--fourth-color);
-
-  margin-bottom: 40px;
-}
-.mobile-menu-contact-mailto {
-  margin-bottom: 48px;
 }
 
 .mobile-menu-contact-mailto-link {
