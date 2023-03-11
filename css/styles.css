@@ -323,6 +323,7 @@ body {
 .mobile-menu-items {
   list-style: none;
 }
+/*li*/
 .mobile-menu-item {
   margin-bottom: 40px;
 }
@@ -349,7 +350,13 @@ body {
 .mobile-menu-contact {
   margin-bottom: 48px;
 }
-
+.mobile-menu-contact-list {
+  list-style: none;
+}
+/*li*/
+.mobile-menu-contact-tel {
+  margin-bottom: 40px;
+}
 .mobile-menu-contact-tel-link {
   font-weight: var(--second-font-weight);
   font-size: var(--fourth-font-size);
@@ -371,7 +378,7 @@ body {
   display: flex;
   list-style: none;
 
-  justify-content: center;
+  justify-content: flex-start;
   gap: 56px;
 }
 
@@ -404,7 +411,7 @@ body {
 }
 
 /*======================/HEADER==========================*/
-/*======================HERO=============================*/
+/*======================HERO=============================
 
 .hero {
   padding-top: 188px;
@@ -446,7 +453,7 @@ body {
   background-color: var(--third-color);
 }
 
-/*overlay*/
+/*overlay*
 .overlay {
   max-width: 1440px;
   min-height: 600px;
