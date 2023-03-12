@@ -114,9 +114,6 @@ body {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }*/
-.header {
-  position: relative;
-}
 
 /*container для mobile,tablet,desktop*/
 .container {
@@ -139,18 +136,7 @@ body {
   }
 }
 
-.menu-container {
-  @media screen and (max-width: 767px) {
-    display: none;
-
-    position: absolute;
-    top: 100%;
-    left: 0;
-    width: 100%;
-  }
-}
-
-/*div в кот сидят лого и кнопка-гамбургер*/
+/*div в кот сидят лого и кнопка-гамбургер.Остальное спрятано*/
 .header-container {
   display: flex;
   align-items: center;
@@ -213,9 +199,6 @@ body {
 }*/
 
 /*прячем header-contact*/
-.header-contact {
-  display: none;
-}
 
 /*.header-contact {
   display: flex;
