@@ -25,48 +25,54 @@
     <!--------------HEADER---------------------------------------------------------->
     <header class="header">
       <div class="container header-container">
-        <nav class="header-navigation">
-          <a class="logo-header link" href="./index.html">
-            <span class="piece">WEB</span>STUDIO</a
-          >
-          <ul class="header-list list">
-            <li class="header-item">
-              <a class="header-link current link" href="./index.html">Studio</a>
-            </li>
-            <li class="header-item">
-              <a class="header-link link" href="./portfolio.html">Portfolio</a>
-            </li>
-            <li class="header-item">
-              <a class="header-link link" href="">Contacts</a>
-            </li>
-          </ul>
-        </nav>
-
-         <!--кнопка-гамбургер(открытие мобильного меню)-->
+        <a class="logo-header link" href="./index.html">
+          <span class="piece">WEB</span>STUDIO</a
+        >
+        <!--кнопка-гамбургер(открытие мобильного меню)и крестик(закрытие моб меню)-->
         <button type="button" class="js-open-menu">
           <svg class="mobile-menu-btn-icon" width="32" height="22">
             <use href="./images/sprite.svg#icon-hamburger"></use>
-          </svg>
+          </svg>  
         </button>
-        
-        <address class="adress">
-          <ul class="header-contact list">
-            <li class="header-contact-item">
-              <a
-                class="header-contact-link link"
-                href="mailto:info@devstudio.com"
-                >info@devstudio.com</a
-              >
-            </li>
-            <li class="header-contact-item">
-              <a class="header-contact-link link" href="tel:+110001111111"
-                >+11 (000) 111-11-11</a
-              >
-            </li>
-          </ul>
-        </address>
+        <div class="menu-container">
+          <nav class="header-navigation">
+            <ul class="header-list list">
+              <li class="header-item">
+                <a class="header-link current link" href="./index.html">Studio</a>
+              </li>
+              <li class="header-item">
+                <a class="header-link link" href="./portfolio.html">Portfolio</a>
+              </li>
+              <li class="header-item">
+                <a class="header-link link" href="">Contacts</a>
+              </li>
+            </ul>
+          </nav>
+          <address class="adress">
+            <ul class="header-contact list">
+              <li class="header-contact-item">
+                <a
+                  class="header-contact-link link"
+                  href="mailto:info@devstudio.com"
+                  >info@devstudio.com</a
+                >
+              </li>
+              <li class="header-contact-item">
+                <a class="header-contact-link link" href="tel:+110001111111"
+                  >+11 (000) 111-11-11</a
+                >
+              </li>
+            </ul>
+          </address>
+        </div>
       </div>
-        <!--мобильное меню(контейнер в котором сидит все)-->
+
+
+  
+
+
+
+       <!--мобильное меню(контейнер в котором сидит все)-->
       <div class="js-menu-container">
         <div class="container mobile-menu-container">
           <div class="mobile-menu-crose-btn">
@@ -78,7 +84,7 @@
             </buttom>
           </div>
 
-          <!--список ссылок на страницы(Studio,Portfolio,Contacts) сайта-->
+          <!--список ссылок на страницы(Studio,Portfolio,Contacts) сайта--
           <div class="mobile-menu-set">
             <ul class="mobile-menu-items">
               <li class="mobile-menu-item">
@@ -105,9 +111,9 @@
             </ul>
           </div>
 
-           <!--обвертка в которой сидят ссылки на соцсети-->
+           <!--обвертка в которой сидят ссылки на соцсети--
           <div>
-            <!--список(ul) ссылок соцсетей в mobile-menu-->
+            <!--список(ul) ссылок соцсетей в mobile-menu--
             <ul class="mobile-menu-list-icon">
               <li class="mobile-menu-item-icon">
                 <a class="mobile-menu-link-icon" href="#">
@@ -143,10 +149,10 @@
             </ul>
           </div>
         </div>
-      </header>
+    </header>
     <main>
 
-      <!----------HERO------------------------------------------------>
+      <!----------HERO------------------------------------------------
       <section class="hero section overlay">
         <div class="container">
           <h1 class="hero-title">Effective Solutions for Your Business</h1>
