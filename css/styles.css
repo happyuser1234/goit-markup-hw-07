@@ -492,7 +492,7 @@ body {
 }
 @media screen and (min-width: 428px) {
   .hero-title {
-    max-width: 320px;
+    max-width: 428px;
   }
 }
 @media screen and (min-width: 428px) {
@@ -504,7 +504,7 @@ body {
 /*главный заголовок в нero*/
 .hero-title {
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /*для центрирования текста*/
   margin-top: 0;
   margin-bottom: 72px;
 
@@ -538,6 +538,23 @@ body {
 .hero-btn:focus {
   background-color: var(--third-color);
 }
+
+/*overlay*
+.overlay {
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url('../images/people-office.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--beckground-color-2);
+}
+
 
 /*overlay*
 .overlay {
