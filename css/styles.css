@@ -136,7 +136,7 @@ body {
   }
 }
 
-/*div в кот сидят лого и кнопка-гамбургер.Остальное спрятано*/
+/*div(контейнер) в кот сидят лого и кнопка-гамбургер.Остальное(menu-container)спрятано*/
 .header-container {
   display: flex;
   align-items: center;
@@ -144,6 +144,8 @@ body {
 
   padding-top: 24px;
   padding-bottom: 24px;
+  margin-left: auto; /*чтоб контейнер был по центру*/
+  margin-right: auto; /*чтоб контейнер был по центру*/
 }
 
 .logo-header {
