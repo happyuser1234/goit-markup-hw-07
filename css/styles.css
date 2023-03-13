@@ -154,17 +154,65 @@ body {
   line-height: var(--second-line-height);
   color: var(--second-color);
   letter-spacing: var(--second-letter-spacing);
+
+  margin-right: 120px;
 }
 .piece {
   color: var(--fourth-color);
 }
+/*контейнер в кот навигация и адресс*/
+.menu-container {
+  display: none;
+}
 
+/*с width:768px контейнер с навигацией и контактами display: flax;*/
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: flex;
+  }
+}
+/*ul-список ссылок*/
 .header-list {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
-.adress {
-  display: none;
+/*li-элемент списка ссылок*/
+.header-item {
+  margin-right: 40px;
 }
+/*a ccылка для studio portfolio contacts*/
+.header-link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+
+  position: relative;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-contact {
+  display: block;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+/*a ccылка для емейла и телефона*/
+.header-contact-link {
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--text-color);
+  font-style: normal;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.header-contact-link:hover {
+  color: var(--third-color);
+}
+
 /*ul*
 .header-list {
   display: flex;
@@ -191,6 +239,13 @@ body {
   background-color: transparent;
   border: none;
   padding: 0;
+}
+
+/*c ширины 768px(для планшета) кнопка пропадает-т.к меняем ей display*/
+@media screen and (min-width: 768px) {
+  .js-open-menu {
+    display: none;
+  }
 }
 
 /*
@@ -226,7 +281,7 @@ body {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/*линия-подчеркивание внизу у ссылки Studio*
+/*линия-подчеркивание внизу у ссылки Studio спозиц-я относительно header-link(ссылки)*/
 .current::after {
   content: '';
 
@@ -259,7 +314,7 @@ body {
   color: var(--third-color);
 }*/
 
-/*КОНТЕЙНЕР в котором находится все мобильное меню*/
+/*КОНТЕЙНЕР,В КОТОРОМ ВСЕ МОБИЛЬНОЕ МЕНЮ*/
 .js-menu-container {
   position: fixed;
   width: 100%;
@@ -274,9 +329,7 @@ body {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
-  /*
-  width: 428px;
-  height: 796px;*/
+  /*когда is-open(открыто),то видно */
 }
 .js-menu-container.is-open {
   transform: translateY(0);
@@ -287,13 +340,12 @@ body {
   position: relative;
   padding-top: 24px;
   padding-bottom: 40px;
-  padding-left: 40px;
 }
 /*div(чтоб отодвинуть нижний список), в кот сидит кнопка(крестик)*/
 .mobile-menu-crose-btn {
   margin-bottom: 32px;
 }
-/*кнопка с крестиком в мобильном меню,споз-я относительно доп класса в контейнере*/
+/*кнопка с крестиком в мобильном меню,споз-я относительно допол-го класса контейнера*/
 .js-close-menu {
   display: flex;
   width: 24px;
@@ -313,14 +365,15 @@ body {
   border-radius: 50%;
 }
 
+/*список строниц (Studio,Portfolio,Contacts)*/
 .mobile-menu-set {
   margin-bottom: 284px;
 }
-/*ul для страниц mobile-menu*/
+/*ul для страниц(Studio,Portfolio,Contacts) mobile-menu*/
 .mobile-menu-items {
   list-style: none;
 }
-/*li*/
+/*li для страниц*/
 .mobile-menu-item {
   margin-bottom: 40px;
 }
