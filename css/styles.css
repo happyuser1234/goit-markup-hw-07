@@ -490,9 +490,15 @@ body {
 
   background: var(--second-color);
 }
+@media screen and (min-width: 428px) {
+  .hero-title {
+    max-width: 320px;
+  }
+}
 
 /*главный заголовок в нero*/
 .hero-title {
+  display: block;
   margin: 0 auto;
   margin-top: 0;
   margin-bottom: 72px;
