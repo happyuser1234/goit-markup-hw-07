@@ -162,17 +162,25 @@ body {
 .piece {
   color: var(--fourth-color);
 }
-/*контейнер в кот навигация и адресс*/
+/*контейнер в кот навигация и адресс(для телефона)*/
 .menu-container {
   display: none;
 }
 
-/*с width:768px контейнер с навигацией и контактами display: flex;*/
+/*Tablet-планшет*/
 @media screen and (min-width: 768px) {
   .menu-container {
     max-width: 768px;
   }
 }
+
+/*div в котором навигация и контакты стал флексом т.e.его элементы стали в ряд*/
+@media screen and (min-width: 768px) {
+  .menu-container {
+    display: flex;
+  }
+}
+
 /*ul-список ссылок*/
 .header-list {
   display: flex;
@@ -197,11 +205,24 @@ body {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/*ul для контактов*/
 .header-contact {
   display: block;
   padding-top: 16px;
   padding-bottom: 16px;
+  gap: 40px;
 }
+
+/*Desctop c 1200px ul контактов dicplay: flex; */
+@media screen and (min-width: 1200px) {
+  .header-contact {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+}
+
 /*a ccылка для емейла и телефона*/
 .header-contact-link {
   line-height: var(--first-line-height);
@@ -251,7 +272,7 @@ body {
 }
 
 /*
-.adress {
+.contact {
   margin-left: auto;
 }*/
 
@@ -464,26 +485,28 @@ body {
 }
 
 /*======================/HEADER==========================*/
-/*======================HERO=============================
+/*======================HERO=============================*/
 
+/*секция в hero*/
 .hero {
-  padding-top: 188px;
-  padding-bottom: 188px;
+  padding-top: 112px;
+  padding-bottom: 112px;
   text-align: center;
 
   background: var(--second-color);
 }
+
+/*главный заголовок в нero*/
 .hero-title {
-  width: 500px;
-  margin: 0 auto;
   margin-top: 0;
-  margin-bottom: 48px;
+  margin-bottom: 72px;
 
   font-size: var(--third-font-size);
   line-height: var(--fours-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--first-color);
 }
+
 .hero-btn {
   border-radius: 4px;
   padding: 16px 32px;
