@@ -144,8 +144,6 @@ body {
 
   padding-top: 24px;
   padding-bottom: 24px;
-  margin-left: auto; /*чтоб контейнер был по центру*/
-  margin-right: auto; /*чтоб контейнер был по центру*/
 }
 
 .logo-header {
@@ -156,8 +154,6 @@ body {
   line-height: var(--second-line-height);
   color: var(--second-color);
   letter-spacing: var(--second-letter-spacing);
-
-  margin-right: 120px;
 }
 .piece {
   color: var(--fourth-color);
@@ -178,6 +174,7 @@ body {
 @media screen and (min-width: 768px) {
   .menu-container {
     display: flex;
+    gap: 121px;
   }
 }
 
@@ -186,11 +183,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 40px;
 }
-/*li-элемент списка ссылок*/
-.header-item {
-  margin-right: 40px;
-}
+
 /*a ccылка для studio portfolio contacts*/
 .header-link {
   display: block;
@@ -498,11 +493,15 @@ body {
 
 /*главный заголовок в нero*/
 .hero-title {
+  margin: 0 auto;
   margin-top: 0;
   margin-bottom: 72px;
 
-  font-size: var(--third-font-size);
-  line-height: var(--fours-line-height);
+  text-align: center;
+
+  font-weight: var(--second-font-weight);
+  font-size: var(--fourth-font-size);
+  line-height: var(--fifth-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--first-color);
 }
