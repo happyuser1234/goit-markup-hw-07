@@ -124,9 +124,9 @@ body {
   margin-right: auto;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 768px) {
   .container {
-    max-width: 428px;
+    max-width: 768px;
   }
 }
 
@@ -167,10 +167,10 @@ body {
   display: none;
 }
 
-/*с width:768px контейнер с навигацией и контактами display: flax;*/
+/*с width:768px контейнер с навигацией и контактами display: flex;*/
 @media screen and (min-width: 768px) {
   .menu-container {
-    display: flex;
+    max-width: 768px;
   }
 }
 /*ul-список ссылок*/
@@ -432,6 +432,7 @@ body {
 
   justify-content: flex-start;
   gap: 56px;
+  flex-wrap: wrap; /*flex-элементы могут занять несколько строк*/
 }
 
 /*li элемент ссылок соцсетей*/
