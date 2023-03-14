@@ -339,7 +339,10 @@ body {
   height: 100%;
   top: 0;
   left: 0;
-  transform: translateY(-100%);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: auto;
 
   background-color: #ffffff;
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
@@ -350,7 +353,9 @@ body {
   /*когда is-open(открыто),то видно */
 }
 .js-menu-container.is-open {
-  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
 }
 
 /*дополнительный класс в div-контейнере-обвертке,чтоб спозиционировать кнопку с крестиком */
