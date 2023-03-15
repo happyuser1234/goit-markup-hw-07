@@ -348,7 +348,8 @@ body {
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 
   /*когда is-open(открыто),то видно */
 }
@@ -544,7 +545,59 @@ body {
   background-color: var(--third-color);
 }
 
-/*overlay-картинка большая и красивая*/
+/*Изображение(фоновое) для обычных моб.тел-в 1x*/
+@media screen and (max-width: 767px) {
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../images/dark-bg-mobile.jpg');
+  }
+}
+
+/*для моб.тел-в от 2x и >: новое фоновое изображение,скаченное из Figma в jpg-формате(оптим-ное в sqoosh в mozJPG-формате)*/
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolunion: 2dppx) and (min-width: 768px) {
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../images/dark-bg-mobile@2x.jpg');
+  }
+}
+
+/*для tablet-планшетов*/
+@media screen and (min-width: 768px) {
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../images/dark-bg-tablet.jpg');
+  }
+}
+
+/*для tablet-планшетов от 2x и >*/
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 768px),
+  screen and (min-resolution: 192dpi) and (min-width: 768px),
+  screen and (min-resolunion: 2dppx) and (min-width: 768px) {
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../images/dark-bg@2x-tablet.jpg');
+  }
+}
+
+/*(для desktop):overlay(фоновое изображение)-картинка большая и красивая c тенью-linear-gradient(через запятую прописан)*/
 .overlay {
   margin-left: auto;
   margin-right: auto;
@@ -553,13 +606,27 @@ body {
       rgba(0, 0, 0, 0.7),
       rgba(0, 0, 0, 0.7)
     ),
-    url('../images/people-office.jpg');
+    url('../images/people-office.jpg'); /*для desktop фоновое изображение остается то же(не скач-ся с Figma)*/
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-color: var(--beckground-color-2);
 }
-/*затемнение поверх всего */
+
+/*для desktop от 2x и >: новое изображение скаченное из Figma в jpg-формате(оптим-ное в sqoosh в mozJPG-формате)*/
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
+  screen and (min-resolution: 192dpi) and (min-width: 1200px),
+  screen and (min-resolunion: 2dppx) and (min-width: 1200px) {
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../images/people-office-desktop@2x.jpg');
+  }
+}
+/*поверх всего(относительно него спозиц-но модальное окно)*/
 .backdrop {
   position: fixed;
   width: 100%;
@@ -575,6 +642,7 @@ body {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*оно прячет*/
 .backdrop.is-hidden {
   opacity: 0;
   visibility: hidden;
@@ -717,6 +785,7 @@ body {
   fill: var(--first-color);
 }
 
+
 /*форма в модальном окне*/
 
 /*заголовок в форме*/
@@ -807,6 +876,78 @@ body {
 
   padding-top: 8px;
   padding-left: 16px;
+}
+textarea {
+  resize: none;
+}
+.form-comment:focus {
+  border-color: var(--background-color-4);
+}
+/*div в котором находиться чекбокс*/
+.hero-form-checkbox {
+  margin-bottom: 24px;
+}
+
+/*label для чекбокса*/
+.form-label-checkbox {
+  display: block;
+  font-size: 12px;
+  line-height: var(--third-line-height);
+  letter-spacing: var(--third-letter-spacing);
+  color: var(--eighth-color);
+}
+
+/*input(элемент для создания поля определенного типа(чекбокс))*/
+.form-checkbox {
+  appearance: none;
+  position: absolute;
+}
+/*иконка-заменитель(svg) чекбокса*/
+.checkbox-icon {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+
+  background-color: var(--fifth-color);
+  margin-right: 8px;
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*при нажатии на чекбокс меняется цвет соседа svg-иконки-заменителя*/
+.form-checkbox:checked + .checkbox-icon {
+  background-color: var(--background-color-5);
+  background-image: url(../images/click.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/*цвет ссылки в части текста */
+.form-link {
+  color: var(--background-color-4);
+}
+.form-wrapper-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-btn {
+  min-width: 169px;
+  padding: 16px 32px;
+  border: none;
+
+  letter-spacing: var(--third-letter-spacing);
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  color: var(--first-color);
+
+  background-color: var(--background-color-4);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
 }
 
 /*форма в модальном окне*/
@@ -980,13 +1121,40 @@ textarea {
   padding-bottom: 0;
 }
 
+@media screen and (max-width: 1200px) {
+  .solutions {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
 /*h2*/
 .section-title {
   margin-top: 0;
   margin-bottom: 8px;
 }
-
 /*UL*/
+.solutions-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 24px;
+}
+/*до ширины 767px ul-ка становится в столбик */
+@media screen and (max-width: 767px) {
+  .solutions-list {
+    display: block;
+  }
+}
+
+/*c 768 ul ставит свои эл-ты в ряд*/
+@media screen and (min-width: 768px) {
+  .solutions-list {
+    flex-wrap: wrap; /*флексэл-ты выстраиваются в несколько строк*/
+  }
+}
+
+/*UL*
 .solutions-list {
   display: flex;
   list-style: none;
@@ -998,6 +1166,16 @@ textarea {
 .solution-item {
   flex-basis: calc((100% - 72px) / 4);
 }
+@media screen and (max-width: 1199px) {
+  .solution-item {
+    flex-basis: calc((100% - 24px) / 2);
+  }
+}
+
+/*li для svg*
+.solution-item {
+  flex-basis: calc((100% - 72px) / 4);
+}*/
 
 /*div для иконки */
 .solution-svg {
@@ -1011,7 +1189,106 @@ textarea {
   justify-content: center;
 }
 
+@media screen and (max-width: 1199px) {
+  .solution-svg {
+    display: none;
+  }
+}
+
 /*h3-подзаголовок*/
+.solution-subtitle {
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-align: center;
+
+  font-weight: var(--second-font-weight);
+  font-size: var(--fourth-font-size);
+  line-height: var(--fifth-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+}
+
+/*h3-подзаголовок*
+.solution-subtitle {
+  margin-top: 0;
+  margin-bottom: 8px;
+  text-align: left;
+
+  font-weight: var(--typical-font-weight);
+  font-size: var(--first-font-size);
+  line-height: var(--third-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+}*/
+
+/*до ширины 767px пусть у всех li-к, кроме последней ,будет margin-bottom: 72px; */
+@media screen and (max-width: 767px) {
+  .solution-item:not(:last-child) {
+    margin-bottom: 72px;
+  }
+}
+
+/*P-текст*/
+.solution-text {
+  text-align: left;
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--text-color);
+}
+
+/*P-текст*
+.solution-text {
+  text-align: left;
+
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--text-color);
+}
+
+/*section-cекция*
+.solutions {
+  padding-bottom: 0;
+}
+
+
+
+
+
+
+
+/*h2*
+.section-title {
+  margin-top: 0;
+  margin-bottom: 8px;
+}
+
+/*UL*
+.solutions-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 24px;
+}
+
+/*li для svg*
+.solution-item {
+  flex-basis: calc((100% - 72px) / 4);
+}
+
+/*div для иконки *
+.solution-svg {
+  display: flex;
+  background-color: var(--background-color-3);
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: 264px;
+  height: 112px;
+  align-items: center;
+  justify-content: center;
+}
+
+/*h3-подзаголовок*
 .solution-subtitle {
   margin-top: 0;
   margin-bottom: 8px;
@@ -1024,7 +1301,7 @@ textarea {
   color: var(--second-color);
 }
 
-/*P-текст*/
+/*P-текст*
 .solution-text {
   text-align: left;
 
@@ -1034,7 +1311,11 @@ textarea {
 }
 /*====================/SOLUTIONS=========================*/
 /*=====================SERVICES==========================*/
-
+@media screen and (max-width: 1199px) {
+  .services {
+    display: none;
+  }
+}
 /*h2*/
 .services-title {
   margin-top: 0;
@@ -1064,7 +1345,27 @@ textarea {
 .team {
   background: var(--background-color-3);
 }
+@media screen and (max-width: 1199px) {
+  .team {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+
 /*h2*/
+.team-title {
+  font-weight: var(--second-font-weight);
+  font-size: var(--fourth-font-size);
+  line-height: var(--fifth-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+  text-align: center;
+
+  margin-top: 0;
+  margin-bottom: 72px;
+}
+
+/*h2*
 .team-title {
   font-size: var(--fourth-font-size);
   line-height: var(--fifth-line-height);
@@ -1082,6 +1383,19 @@ textarea {
   display: flex;
   column-gap: 24px;
 }
+
+/*ul*
+.team-list {
+  list-style: none;
+  display: flex;
+  column-gap: 24px;
+}*/
+@media screen and (max-width: 767px) {
+  .team-list {
+    display: block;
+  }
+}
+
 /*li*/
 .team-item {
   background: var(--first-color);
@@ -1090,11 +1404,37 @@ textarea {
   border-radius: 0px 0px 4px 4px;
 }
 
-/*set из h3 и p*/
+/*li*
+.team-item {
+  background: var(--first-color);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+}*/
+@media screen and (min-width: 768px) {
+  .team-item {
+    flex-basis: calc((100%-24) / 2);
+  }
+}
+
+/*set из h3 и p*
 .team-set {
   padding: 32px 0;
 }
-/*h3*/
+/*set из h3 и p*
+.team-set {
+  padding: 32px 0;
+ 
+  /*h3*
+.team-subtitle {
+  font-weight: var(--typical-font-weight);
+  font-size: var(--first-font-size);
+  line-height: var(--third-line-height);
+  text-align: center;
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+}
+/*h3*
 .team-subtitle {
   font-weight: var(--typical-font-weight);
   font-size: 20px;
@@ -1105,7 +1445,14 @@ textarea {
 
   margin-bottom: 8px;
 }
-/*p*/
+/*p*
+.team-text {
+  line-height: var(--first-line-height);
+  text-align: center;
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--text-color);
+}
+/*p*
 .team-text {
   line-height: var(--first-line-height);
   text-align: center;
@@ -1113,8 +1460,7 @@ textarea {
   color: var(--text-color);
   margin-bottom: 8px;
 }
-
-/*ul список ссылок соцсетей*/
+/*ul список ссылок соцсетей*
 .team-list-icon {
   display: flex;
   list-style: none;
@@ -1122,14 +1468,25 @@ textarea {
   justify-content: center;
   gap: 24px;
 }
+/*ul список ссылок соцсетей*
+.team-list-icon {
+  display: flex;
+  list-style: none;
 
-/*li элемент ссылок соцсетей*/
+  justify-content: center;
+  gap: 24px;
+}
+/*li элемент ссылок соцсетей*
 .team-item-icon {
   width: 40px;
   height: 40px;
 }
-
-/*a ccылок соцсетей*/
+/*li элемент ссылок соцсетей*
+.team-item-icon {
+  width: 40px;
+  height: 40px;
+}
+/*a ccылок соцсетей*
 .team-link-icon {
   display: flex;
   width: 100%;
@@ -1142,7 +1499,27 @@ textarea {
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/*a ccылок соцсетей*
+.team-link-icon {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background-color: var(--background-color-4);
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  color: var(--fifth-color);
 
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}*
+.team-link-icon:hover,
+.team-link-icon:focus {
+  background-color: var(--background-color-5);
+}
+.team-icon {
+  fill: currentColor;
+}
+/**
 .team-link-icon:hover,
 .team-link-icon:focus {
   background-color: var(--background-color-5);
