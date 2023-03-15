@@ -1395,6 +1395,11 @@ textarea {
     display: block;
   }
 }
+@media screen and (max-width: 768px) {
+  .team-list {
+    flex-wrap: wrap;
+  }
+}
 
 /*li*/
 .team-item {
@@ -1413,7 +1418,7 @@ textarea {
 }*/
 @media screen and (min-width: 768px) {
   .team-item {
-    flex-basis: calc((100%-24) / 2);
+    flex-basis: calc((100%-24px) / 2);
   }
 }
 
