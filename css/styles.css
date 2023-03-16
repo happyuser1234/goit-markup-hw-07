@@ -145,6 +145,12 @@ body {
   padding-top: 24px;
   padding-bottom: 24px;
 }
+@media screen and (min-width: 768px) {
+  .header-container {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+}
 
 .logo-header {
   font-family: 'Raleway', sans-serif;
@@ -163,16 +169,10 @@ body {
   display: none;
 }
 
-/*Tablet-планшет*/
+/*Tablet-планшет div стал флексом, в котором навигация и контакты  т.e.его элементы стали в ряд*/
 @media screen and (min-width: 768px) {
   .menu-container {
     max-width: 768px;
-  }
-}
-
-/*div в котором навигация и контакты стал флексом т.e.его элементы стали в ряд*/
-@media screen and (min-width: 768px) {
-  .menu-container {
     display: flex;
     gap: 121px;
   }
@@ -367,7 +367,7 @@ body {
 }
 /*div(чтоб отодвинуть нижний список), в кот сидит кнопка(крестик)*/
 .mobile-menu-crose-btn {
-  margin-bottom: 32px;
+  padding-bottom: 32px;
 }
 /*кнопка с крестиком в мобильном меню,споз-я относительно допол-го класса контейнера*/
 .js-close-menu {
@@ -612,43 +612,6 @@ body {
   background-position: center;
   background-color: var(--beckground-color-2);
 }
-
-/*для desktop от 2x и >: новое изображение скаченное из Figma в jpg-формате(оптим-ное в sqoosh в mozJPG-формате)*/
-@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
-  screen and (min-resolution: 192dpi) and (min-width: 1200px),
-  screen and (min-resolunion: 2dppx) and (min-width: 1200px) {
-  .overlay {
-    background-image: linear-gradient(
-        to right,
-        rgba(0, 0, 0, 0.7),
-        rgba(0, 0, 0, 0.7)
-      ),
-      url('../images/people-office-desktop@2x.jpg');
-  }
-}
-/*поверх всего(относительно него спозиц-но модальное окно)*/
-.backdrop {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 0;
-  background-color: rgba(46, 47, 66, 0.4);
-
-  opacity: 1;
-  visibility: visible;
-
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/*оно прячет*/
-.backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none; /*событие укозателя(мышь,сенсор)*/
-}
-
 /*overlay*
 .overlay {
   max-width: 1440px;
@@ -666,6 +629,37 @@ body {
   background-position: center;
   background-color: var(--beckground-color-2);
 }
+
+/*для desktop от 2x и >: новое изображение скаченное из Figma в jpg-формате(оптим-ное в sqoosh в mozJPG-формате)*/
+@media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
+  screen and (min-resolution: 192dpi) and (min-width: 1200px),
+  screen and (min-resolunion: 2dppx) and (min-width: 1200px) {
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.7),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('../images/people-office-desktop@2x.jpg');
+  }
+}
+
+/*(поле для модального окна) поверх всего(относительно него спозиц-но модальное окно).Нужен для того чтоб спрятать мод.окно*/
+.backdrop {
+  position: fixed;
+  width: 100%; /*чего?*/
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(46, 47, 66, 0.4);
+
+  opacity: 1;
+  visibility: visible;
+
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*
 .backdrop {
   position: fixed;
   width: 100%;
@@ -681,17 +675,18 @@ body {
     visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+/*оно прячет мод.окно*/
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none; /*событие укозателя(мышь,сенсор)*/
+}
+/*
 .backdrop.is-hidden {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
 }
-
-
-
-
-
-
 
 /*модальное окно*/
 .modal {
@@ -709,6 +704,31 @@ body {
   border-radius: 4px;
 
   padding: 72px 24px 24px;
+}
+/*модальное окно*
+.modal {
+  width: 408px;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  min-height: 576px;
+  background-color: var(--background-color-7);
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+
+  padding: 72px 24px 24px;
+}*/
+@media screen and (min-width: 428px) {
+  .backdrop {
+    padding-top: 96px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 114px;
+  }
 }
 
 /*buttom для иконки-то в чем сидит иконка(крестик)*/
@@ -738,47 +758,7 @@ body {
   background-color: var(--background-color-5);
   fill: var(--first-color);
 }
-
-/*модальное окно*
-.modal {
-  width: 408px;
-
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  min-height: 576px;
-  background-color: var(--background-color-7);
-  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 1px 3px rgba(0, 0, 0, 0.12),
-    0px 2px 1px rgba(0, 0, 0, 0.2);
-  border-radius: 4px;
-
-  padding: 72px 24px 24px;
-}
-
-/*buttom для иконки-то в чем сидит иконка(крестик)*
-.hero-svg {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  bottom: 528px;
-
-  display: flex;
-  width: 24px;
-  height: 24px;
-  background-color: var(--background-color-8);
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: 50%;
-
-  align-items: center;
-  justify-content: center;
-
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
+/*
 .hero-svg:hover,
 .hero-svg:focus {
   background-color: var(--background-color-5);
@@ -1704,10 +1684,9 @@ textarea {
 /*(для планшета) с 768px по 1199px */
 @media screen and (min-width: 768px) and (max-width: 1199px) {
   .footer-container {
-    flex-direction: row;
     flex-wrap: wrap; /*перенос блоков на другую строку*/
-    justify-content: flex-start; /*распределение пространства внутри блока (работает потому что gap одинаковый)*/
     gap: 24px;
+    padding-left: 108px; /*????????????*/
   }
 }
 
