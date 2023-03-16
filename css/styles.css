@@ -1121,7 +1121,7 @@ textarea {
   padding-bottom: 0;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1157px) {
   .solutions {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -1166,7 +1166,7 @@ textarea {
 .solution-item {
   flex-basis: calc((100% - 72px) / 4);
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1157px) {
   .solution-item {
     flex-basis: calc((100% - 24px) / 2);
   }
@@ -1189,7 +1189,7 @@ textarea {
   justify-content: center;
 }
 
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1157px) {
   .solution-svg {
     display: none;
   }
@@ -1345,7 +1345,7 @@ textarea {
 .team {
   background: var(--background-color-3);
 }
-@media screen and (max-width: 1199px) {
+@media screen and (max-width: 1157px) {
   .team {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -1390,14 +1390,19 @@ textarea {
   display: flex;
   column-gap: 24px;
 }*/
+/*для телефона */
 @media screen and (max-width: 767px) {
   .team-list {
-    display: block;
+    row-gap: 72px;
   }
 }
-@media screen and (max-width: 768px) {
+
+/* до 1157px действует перенос строк  */
+@media screen and (max-width: 1199px) {
   .team-list {
-    flex-wrap: wrap;
+    flex-wrap: wrap; /*перенос строк*/
+    row-gap: 64px; /*строчный отступ*/
+    justify-content: center; /*выравнивание элементов посредине по вертикали*/
   }
 }
 
@@ -1416,13 +1421,8 @@ textarea {
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0px 0px 4px 4px;
 }*/
-@media screen and (min-width: 768px) {
-  .team-item {
-    flex-basis: calc((100%-24px) / 2);
-  }
-}
 
-/*set из h3 и p*
+/*set из h3 и p*/
 .team-set {
   padding: 32px 0;
 }
@@ -1430,7 +1430,7 @@ textarea {
 .team-set {
   padding: 32px 0;
  
-  /*h3*
+  /*h3*/
 .team-subtitle {
   font-weight: var(--typical-font-weight);
   font-size: var(--first-font-size);
@@ -1438,6 +1438,8 @@ textarea {
   text-align: center;
   letter-spacing: var(--first-letter-spacing);
   color: var(--second-color);
+
+  margin-bottom: 8px;
 }
 /*h3*
 .team-subtitle {
@@ -1450,12 +1452,14 @@ textarea {
 
   margin-bottom: 8px;
 }
-/*p*
+/*p*/
 .team-text {
   line-height: var(--first-line-height);
   text-align: center;
   letter-spacing: var(--first-letter-spacing);
   color: var(--text-color);
+
+  margin-bottom: 8px;
 }
 /*p*
 .team-text {
@@ -1465,7 +1469,7 @@ textarea {
   color: var(--text-color);
   margin-bottom: 8px;
 }
-/*ul список ссылок соцсетей*
+/*ul список ссылок соцсетей*/
 .team-list-icon {
   display: flex;
   list-style: none;
@@ -1481,7 +1485,7 @@ textarea {
   justify-content: center;
   gap: 24px;
 }
-/*li элемент ссылок соцсетей*
+/*li элемент ссылок соцсетей*/
 .team-item-icon {
   width: 40px;
   height: 40px;
@@ -1491,7 +1495,7 @@ textarea {
   width: 40px;
   height: 40px;
 }
-/*a ccылок соцсетей*
+/*a ccылок соцсетей*/
 .team-link-icon {
   display: flex;
   width: 100%;
@@ -1516,7 +1520,7 @@ textarea {
   color: var(--fifth-color);
 
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}*
+}*/
 .team-link-icon:hover,
 .team-link-icon:focus {
   background-color: var(--background-color-5);
@@ -1534,21 +1538,35 @@ textarea {
 }
 /*=====================/TEAM============================*/
 /*====================CUSTOMES==========================*/
+@media screen and (max-width: 1199px) {
+  .customes {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
 
 /*секция*/
 .customes {
-  padding-top: 130px;
+  padding-top: 120px;
+  padding-bottom: 120px;
+  text-align: center;
+}
+/*секция*
+.customes {
+  padding-top: 120px;
   padding-bottom: 120px;
   text-align: center;
 }
 
 /*h2*/
 .customes-titel {
+  font-weight: var(--second-font-weight);
   font-size: var(--fourth-font-size);
   line-height: var(--fifth-line-height);
   text-align: center;
   letter-spacing: var(--first-letter-spacing);
   color: var(--second-color);
+
   margin-bottom: 72px;
 }
 
@@ -1560,9 +1578,30 @@ textarea {
   gap: 24px;
 }
 
+@media screen and (max-width: 1199px) {
+  .customes-list {
+    flex-wrap: wrap; /*перенос строки*/
+    row-gap: 72px; /*отступ между строками*/
+  }
+}
+
 /*li*/
 .customes-item {
-  width: calc((100%-5 * 24px) / 6);
+  width: calc((100%-5 * 24px) / 6); /*5 промежутков по 24px*/
+}
+/*НЕ очень понимаю(что-то связано с рядами)*/
+/*????????до 767px li в два ряда(ширина распред-ся на два ряда,почему тогда работает  только 3)*/
+@media screen and (max-width: 767px) {
+  .customes-item {
+    width: calc((100%-24px) / 3); /*??????один промежуток*/
+  }
+}
+
+/*?????????c 767px в 3 ряда(4-это что ряд???????)  */
+@media screen and (min-width: 768px) {
+  .customes-item {
+    width: calc((100%-2 * 24px) / 4); /*???????два промежутка */
+  }
 }
 
 /*a-ссылка*/
@@ -1591,6 +1630,45 @@ textarea {
   fill: currentColor;
 }
 
+/*ul*
+.customes-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+}
+
+/*li*
+.customes-item {
+  width: calc((100%-5) * 24px / 6);
+}
+
+/*a-ссылка*
+.customes-link {
+  display: flex;
+  width: 100%;
+  height: 88px;
+  border: 1px solid var(--seventh-color);
+  border-radius: 4px;
+  color: var(--seventh-color);
+  align-items: center;
+  justify-content: center;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.customes-link:hover,
+.customes-link:focus {
+  color: var(--third-color);
+  border-color: var(--third-color);
+}
+
+/*иконка,которая наследует цвет от родителя-a*
+.customes-icon {
+  fill: currentColor;
+}
+
 /*====================/CUSTOMES==========================*/
 /*====================FOOTER============================*/
 
@@ -1601,9 +1679,36 @@ textarea {
   background: var(--beckground-color-2);
 }
 
-/*псевдокласс для разделения двух элементов в контейнере*/
+@media screen and (max-width: 1199px) {
+  .footer {
+    padding-top: 96px;
+    padding-bottom: 96px;
+  }
+}
+/*псевдокласс для разделения двух основных div-ов(две оболочки в которых есть еще div-ы) в контейнере*/
 .footer-container {
   display: flex;
+}
+/*псевдокласс для разделения двух элементов в контейнере*
+.footer-container {
+  display: flex;
+}*/
+
+/*для телефона*/
+@media screen and (max-width: 767px) {
+  .footer-container {
+    flex-direction: column; /*блоки в контейнере расположены в колонку(вертикально)*/
+  }
+}
+
+/*(для планшета) с 768px по 1199px */
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .footer-container {
+    flex-direction: row;
+    flex-wrap: wrap; /*перенос блоков на другую строку*/
+    justify-content: flex-start; /*распределение пространства внутри блока (работает потому что gap одинаковый)*/
+    gap: 24px;
+  }
 }
 
 /*wrapper for a and p*/
@@ -1611,7 +1716,39 @@ textarea {
   margin-right: 120px;
 }
 
+/*wrapper for a and p*
+.footer-wrapper-content {
+  margin-right: 120px;
+}
+
+/*до этой ширины пока блоки стоят в столбик (по вертикали) margin-bottom: 72px*/
+@media screen and (max-width: 1199px) {
+  .footer-wrapper-content {
+    margin-bottom: 72px;
+    align-items: center; /*так как блоки стали в колонку по вертикали то и поперечная ось стала так как они и выглядит как justify-content*/
+    display: flex;
+    flex-direction: column; /*стали в колонку по вертикали*/
+    margin-right: 0; /*чтоб эти двум элементам придвинуться,т.е. перебить margin:120px в компьютерном варианте*/
+  }
+}
+
 /*a-главная ссылка*/
+.logo-footer {
+  display: flex;
+  font-family: 'Raleway', sans-serif;
+  font-weight: var(--first-font-weight);
+  font-size: var(--second-font-size);
+  line-height: var(--second-line-height);
+  color: var(--next-color);
+  margin-bottom: 16px;
+}
+@media screen and (max-width: 767px) {
+  .logo-footer {
+    align-items: center;
+    justify-content: center;
+  }
+}
+/*a-главная ссылка*
 .logo-footer {
   display: flex;
   font-family: 'Raleway', sans-serif;
@@ -1632,12 +1769,48 @@ textarea {
   color: var(--sixth-color);
 }
 
+/*p-текст*
+.footer-text {
+  width: 264px;
+
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+
+  color: var(--sixth-color);
+}*/
+
 /*wrapper для h3 и списка соцсетей*/
 .footer-wrapper-link {
   margin-right: 80px;
 }
+/*wrapper для h3 и списка соцсетей*
+.footer-wrapper-link {
+  margin-right: 80px;
+}*/
+
+/*(для телефона) убрали справа от div(в кот.h3 и соцсети)маржан чтоб не мешал центрировать блоки в телефонной версии экрана */
+@media screen and (max-width: 767px) {
+  .footer-wrapper-link {
+    margin-right: 0;
+  }
+}
 
 /*h3-подзаголовок списка ссылок соцсетей*/
+.footer-titel {
+  margin-bottom: 16px;
+
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--first-color);
+}
+@media screen and (max-width: 767px) {
+  .footer-titel {
+    text-align: center;
+  }
+}
+
+/*h3-подзаголовок списка ссылок соцсетей*
 .footer-titel {
   margin-bottom: 16px;
 
@@ -1654,11 +1827,32 @@ textarea {
   justify-content: center;
   gap: 16px;
 }
+/*ul для ссылок соцсетей*
+.footer-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 16px;
+}
+
+/*(для телефона) до 767 список ссылок отодвигается на 72*/
+@media screen and (max-width: 767px) {
+  .footer-list {
+    margin-bottom: 72px;
+  }
+}
 /*li для ссылки соцсетей*/
 .footer-item {
   width: 40px;
   height: 40px;
 }
+
+/*li для ссылки соцсетей*
+.footer-item {
+  width: 40px;
+  height: 40px;
+}
+
 
 /*a для ссылки*/
 .footer-link {
@@ -1681,6 +1875,36 @@ textarea {
   fill: currentColor;
 }
 
+/*a для ссылки*
+.footer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  height: 40px;
+  width: 100%;
+  color: var(--background-color-3);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.footer-link:hover,
+.footer-link:focus {
+  background-color: var(--background-color-6);
+}
+.footer-icon {
+  fill: currentColor;
+}
+
+
+
+
+
+
+
+
+
+
 /*текст-заголовок в форме футера*/
 .footer-form-text {
   margin-bottom: 16px;
@@ -1690,9 +1914,40 @@ textarea {
   letter-spacing: var(--first-letter-spacing);
   color: var(--first-color);
 }
+
+/*текст-заголовок в форме футера*
+.footer-form-text {
+  margin-bottom: 16px;
+
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--first-color);
+}*/
+
+/*для телефона заголовок стоит посредине*/
+@media screen and (max-width: 767px) {
+  .footer-form-text {
+    text-align: center;
+  }
+}
+
 /*форма,которая включает в себя input и button*/
 .footer-form {
   display: inline-flex;
+}
+
+/*форма,которая включает в себя input и button*
+.footer-form {
+  display: inline-flex;
+}*/
+@media screen and (max-width: 767px) {
+  .footer-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /*стали по центру горизонтально*/
+    row-gap: 16px; /*отступ(как gap только по строкам)*/
+  }
 }
 
 /*input у которого фиксированная высота*/
@@ -1713,6 +1968,45 @@ textarea {
 
   background-color: #2e2f42;
 }
+
+/*input у которого фиксированная высота*
+.footer-input-email {
+  margin-right: 24px;
+  width: 264px;
+  height: 40px;
+  padding-left: 16px;
+
+  font-size: var(--fifth-font-size);
+  line-height: var(--sixth-line-height);
+  letter-spacing: var(--third-letter-spacing);
+  color: rgba(255, 255, 255, 0.6);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  background-color: #2e2f42;
+}*/
+
+.sabscribe-btn {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 24px;
+  gap: 16px;
+  border: none;
+
+  border-radius: 4px;
+  background-color: var(--background-color-4);
+
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  letter-spacing: var(--third-letter-spacing);
+
+  color: var(--background-color-1);
+}
+
+/*
 .sabscribe-btn {
   display: inline-flex;
   justify-content: center;

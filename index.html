@@ -23,128 +23,128 @@
 
   <body>
     <!--------------HEADER---------------------------------------------------------->
-    <header class="header">
+    <div class="header">
       <div class="container header-container">
         <a class="logo-header link" href="./index.html">
-          <span class="piece">WEB</span>STUDIO</a
-        >
-        <!--кнопка-гамбургер(открытие мобильного меню)и крестик(закрытие моб меню)-->
-        <button type="button" class="js-open-menu">
-          <svg class="mobile-menu-btn-icon" width="32" height="22">
-            <use href="./images/sprite.svg#icon-hamburger"></use>
-          </svg>  
-        </button>
-        <div class="menu-container">
-          <nav class="header-navigation">
-            <ul class="header-list list">
-              <li class="header-item">
-                <a class="header-link current link" href="./index.html">Studio</a>
-              </li>
-              <li class="header-item">
-                <a class="header-link link" href="./portfolio.html">Portfolio</a>
-              </li>
-              <li class="header-item">
-                <a class="header-link link" href="">Contacts</a>
-              </li>
-            </ul>
-          </nav>
-          <address class="contact">
-            <ul class="header-contact list">
-              <li class="header-contact-item">
-                <a
-                  class="header-contact-link link"
-                  href="mailto:info@devstudio.com"
-                  >info@devstudio.com</a
-                >
-              </li>
-              <li class="header-contact-item">
-                <a class="header-contact-link link" href="tel:+110001111111"
-                  >+11 (000) 111-11-11</a
-                >
-              </li>
-            </ul>
-          </address>
+          <span class="piece">WEB</span>STUDIO</a>
+          <!--кнопка-гамбургер(открытие мобильного меню)и крестик(закрытие моб меню)-->
+          <button type="button" class="js-open-menu">
+            <svg class="mobile-menu-btn-icon" width="32" height="22">
+              <use href="./images/sprite.svg#icon-hamburger"></use>
+            </svg>  
+          </button>
+          <div class="menu-container">
+            <nav class="header-navigation">
+              <ul class="header-list list">
+                <li class="header-item">
+                  <a class="header-link current link" href="./index.html">Studio</a>
+                </li>
+                <li class="header-item">
+                  <a class="header-link link" href="./portfolio.html">Portfolio</a>
+                </li>
+                <li class="header-item">
+                  <a class="header-link link" href="">Contacts</a>
+                </li>
+              </ul>
+            </nav>
+            <address class="contact">
+              <ul class="header-contact list">
+                <li class="header-contact-item">
+                  <a
+                    class="header-contact-link link"
+                    href="mailto:info@devstudio.com">info@devstudio.com
+                  </a>
+                </li>
+                <li class="header-contact-item">
+                  <a class="header-contact-link link" href="tel:+110001111111">+11 (000) 111-11-11
+                  </a>
+                </li>
+              </ul>
+            </address>
+          </div>
+        </div>
+
+        <!--МОБИЛЬНОЕ МЕНЮ КОНТЕЙНЕТ В КОТОРОМ СИДИТ ВСЕ-->
+        <div class="js-menu-container">
+          <div class="container mobile-menu-container">
+            <div class="mobile-menu-crose-btn">
+              <buttom class="js-close-menu">
+                <svg class="mobile-menu-close-icon" width="8" height="8">
+                  <use href="./images/sprite.svg#icon-close">
+                  </use>
+                </svg>
+              </buttom>
+            </div>
+
+            <!--список ссылок на страницы(Studio,Portfolio,Contacts) сайта-->
+            <div class="mobile-menu-set">
+              <ul class="mobile-menu-items">
+                <li class="mobile-menu-item">
+                  <a class="mobile-menu-link link" href="./index.html">Studio</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a class="mobile-menu-link link" href="./portfolio.html">Portfolio</a>
+                </li>
+                <li class="mobile-menu-item">
+                  <a class="mobile-menu-link link" href=" ">Contacts</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="mobile-menu-contact">
+              <ul class="mobile-menu-contact-list">
+                <li class="mobile-menu-contact-tel">
+                  <a class="mobile-menu-contact-tel-link link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+                </li>
+
+                <li>
+                  <a class="mobile-menu-contact-mailto-link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
+                </li>
+              </ul>
+            </div>
+
+            <!--обвертка в которой сидят ссылки на соцсети-->
+            <div>
+            <!--список(ul) ссылок соцсетей в mobile-menu-->
+              <ul class="mobile-menu-list-icon">
+                <li class="mobile-menu-item-icon">
+                  <a class="mobile-menu-link-icon" href="#">
+                    <svg class="mobile-menu-icon" width="16" height="16">
+                      <use href="./images/sprite.svg#icon-instagram-2"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="mobile-menu-item-icon">
+                  <a class="mobile-menu-link-icon" href="#">
+                    <svg class="mobile-menu-icon" width="16" height="16">
+                      <use href="./images/sprite.svg#icon-twitter-1"></use>
+                    </svg>
+                  </a>
+                </li>
+              
+                <li class="mobile-menu-item-icon">
+                  <a class="mobile-menu-link-icon" href="#">
+                    <svg class="mobile-menu-icon" width="16" height="16">
+                      <use href="./images/sprite.svg#icon-facebook-1"></use>
+                    </svg>
+                  </a>
+                </li>
+
+                <li class="mobile-menu-item-icon">
+                  <a class="mobile-menu-link-icon" href="#">
+                    <svg class="mobile-menu-icon" width="16" height="16">
+                      <use href="./images/sprite.svg#icon-linkedin-1"></use>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
-
-       <!--МОБИЛЬНОЕ МЕНЮ КОНТЕЙНЕТ В КОТОРОМ СИДИТ ВСЕ-->
-      <div class="js-menu-container">
-        <div class="container mobile-menu-container">
-          <div class="mobile-menu-crose-btn">
-            <buttom class="js-close-menu">
-              <svg class="mobile-menu-close-icon" width="8" height="8">
-                <use href="./images/sprite.svg#icon-close">
-                </use>
-              </svg>
-            </buttom>
-          </div>
-
-          <!--список ссылок на страницы(Studio,Portfolio,Contacts) сайта-->
-          <div class="mobile-menu-set">
-            <ul class="mobile-menu-items">
-              <li class="mobile-menu-item">
-                <a class="mobile-menu-link link" href="./index.html">Studio</a>
-              </li>
-              <li class="mobile-menu-item">
-                <a class="mobile-menu-link link" href="./portfolio.html">Portfolio</a>
-              </li>
-              <li class="mobile-menu-item">
-                <a class="mobile-menu-link link" href=" ">Contacts</a>
-              </li>
-            </ul>
-          </div>
-
-          <div class="mobile-menu-contact">
-            <ul class="mobile-menu-contact-list">
-              <li class="mobile-menu-contact-tel">
-                <a class="mobile-menu-contact-tel-link link" href="tel:+110001111111">+11 (000) 111-11-11</a>
-              </li>
-
-              <li>
-                <a class="mobile-menu-contact-mailto-link link" href="mailto:info@devstudio.com">info@devstudio.com</a>
-              </li>
-            </ul>
-          </div>
-
-           <!--обвертка в которой сидят ссылки на соцсети-->
-          <div>
-            <!--список(ul) ссылок соцсетей в mobile-menu-->
-            <ul class="mobile-menu-list-icon">
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-instagram-2"></use>
-                  </svg>
-                </a>
-              </li>
-
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-twitter-1"></use>
-                  </svg>
-                </a>
-              </li>
-              
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-facebook-1"></use>
-                  </svg>
-                </a>
-              </li>
-
-              <li class="mobile-menu-item-icon">
-                <a class="mobile-menu-link-icon" href="#">
-                  <svg class="mobile-menu-icon" width="16" height="16">
-                    <use href="./images/sprite.svg#icon-linkedin-1"></use>
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
     </header>
+
     <main>
 
       <!----------HERO------------------------------------------------>
@@ -318,7 +318,7 @@
               <div class="team-set">
                 <h3 class="team-subtitle centered">Tom Ford</h3>
                 <p class="team-text centered">Frontend Developer</p>
-                <!--иконки с цоцсетями Tom Ford-->
+                <!--иконки с cоцсетями Tom Ford-->
                 <ul class="team-list-icon">
                   <li class="team-item-icon">
                     <a class="team-link-icon" href="">
@@ -453,9 +453,9 @@
           </ul>
         </div>
       </section>
-      <!------------/TEAM------------------------------------------------------------------------
+      <!------------/TEAM-------------------------------------------->
 
-      <!----Customes(клиенты)------------------------------------------------------------
+      <!----Customes(клиенты)---------------------------------------->
       <section class="customes">
         <div class="container">
           <h2 class="customes-titel">Customers</h2>
@@ -507,10 +507,10 @@
       </section>
     </main>
 
-    <!--------------FOOTER------------------------------------------------
+    <!--------------FOOTER------------------------------------------------>
     <footer class="footer">
       <div class="container footer-container">
-        <!--обвертка div для a-ccылка и p-текст--
+        <!--обвертка div для a-ccылка и p-текст-->
         <div class="footer-wrapper-content">
           <a class="logo-footer link" href="./index.html"
             ><span class="piece">WEB</span>STUDIO</a
@@ -521,7 +521,7 @@
           </p>
         </div>
 
-        <!--обвертка для h3 и списка ссылок в соцсети--
+        <!--обвертка для h3 и списка ссылок в соцсети-->
         <div class="footer-wrapper-link">
           <h3 class="footer-titel">Social media</h3>
           <div class="footer-list-link">
@@ -558,7 +558,7 @@
           </div>
         </div>
 
-        <!---------обвертка div для form-footer-------------------------------------
+        <!---------обвертка div для form-footer------------------------------------->
         <div class="footer-wrapper-form">
           <p class="footer-form-text">Subscribe</p>
           <form class="footer-form">
@@ -577,7 +577,7 @@
           </form>
         </div>
       </div>
-    </footer>------------------------->
+    </footer>
      
        <!--------Модальное окно-->
     <div class="backdrop is-hidden" data-modal>
