@@ -728,6 +728,7 @@ body {
     padding-left: 18px;
     padding-right: 18px;
     padding-top: 114px;
+    overflow-y: scroll; /*прокручивание контента в мод.окне,а не в бекдропе*/
   }
 }
 
