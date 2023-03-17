@@ -109,11 +109,12 @@ body {
 }
 
 /*======================HEADER===========================*/
-/*.header {
+/**/
+.header {
   border-bottom: 1px solid var(--sixth-color);
   box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
     0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
-}*/
+}
 
 /*container для mobile,tablet,desktop*/
 .container {
@@ -185,12 +186,47 @@ body {
   justify-content: center;
   gap: 40px;
 }
+/*ul*
+.header-list {
+  display: flex;
+  margin-left: 76px;
+}
+
+/*li*
+.header-item {
+  margin-right: 40px;
+}
+.header-item:last-child {
+  margin-right: 0;
+}*/
+/*li*
+.header-item {
+  margin-right: 40px;
+}
+.header-item:last-child {
+  margin-right: 0;
+}*/
 
 /*a ccылка для studio portfolio contacts*/
 .header-link {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  font-weight: var(--typical-font-weight);
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--second-color);
+
+  position: relative;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*a ccылка для studio portfolio contacts*
+.header-link {
+  display: block;
+  padding-top: 24px;
+  padding-bottom: 24px;
+
   font-weight: var(--typical-font-weight);
   line-height: var(--first-line-height);
   letter-spacing: var(--first-letter-spacing);
@@ -227,23 +263,22 @@ body {
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+/*a ccылка для емейла и телефона */
+.header-contact-link {
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--text-color);
+  font-style: normal;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 .header-contact-link:hover {
   color: var(--third-color);
 }
-
-/*ul*
-.header-list {
-  display: flex;
-  margin-left: 76px;
+/*
+.header-contact-link:hover {
+  color: var(--third-color);
 }
-
-/*li*
-.header-item {
-  margin-right: 40px;
-}
-.header-item:last-child {
-  margin-right: 0;
-}*/
 
 /*кнопка-hamburger*/
 .js-open-menu {
@@ -265,41 +300,51 @@ body {
     display: none;
   }
 }
-
+/**/
+.contact {
+  margin-left: auto;
+}
 /*
 .contact {
   margin-left: auto;
 }*/
 
-/*прячем header-contact*/
-
-/*.header-contact {
+/**/
+.header-contact {
   display: flex;
 }
+/**/
+.header-contact {
+  display: flex;
+}
+
+/*с 768-1199 ul,в кот tel и mailto стоят друг под другом*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .header-contact {
+    display: block;
+  }
+}
+
 .header-contact-item {
   margin-right: 40px;
 }
+/*
+.header-contact-item {
+  margin-right: 40px;
+}*/
+@media screen and (min-width: 428px) {
+  .header-contact-item {
+    margin-right: 0;
+  }
+}
+.header-contact-item:last-child {
+  margin-right: 0;
+} /**
 .header-contact-item:last-child {
   margin-right: 0;
 }
 
-/*a ccылка для studio portfolio contacts*
-.header-link {
-  display: block;
-  padding-top: 24px;
-  padding-bottom: 24px;
-
-  font-weight: var(--typical-font-weight);
-  line-height: var(--first-line-height);
-  letter-spacing: var(--first-letter-spacing);
-  color: var(--second-color);
-
-  position: relative;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-/*линия-подчеркивание внизу у ссылки Studio спозиц-я относительно header-link(ссылки)*/
+/*линия-подчеркивание под Studio,спозиц-я относительно header-link(ссылки)*/
 .current::after {
   content: '';
 
@@ -318,19 +363,6 @@ body {
 .header-link:focus {
   color: var(--third-color);
 }
-
-/*a ccылка для емейла и телефона *
-.header-contact-link {
-  line-height: var(--first-line-height);
-  letter-spacing: var(--first-letter-spacing);
-  color: var(--text-color);
-  font-style: normal;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.header-contact-link:hover {
-  color: var(--third-color);
-}*/
 
 /*КОНТЕЙНЕР,В КОТОРОМ ВСЕ МОБИЛЬНОЕ МЕНЮ*/
 .js-menu-container {
@@ -686,6 +718,16 @@ body {
   visibility: hidden;
   opacity: 0;
   pointer-events: none;
+}*/
+
+@media screen and (min-width: 428px) {
+  .backdrop {
+    padding-top: 96px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 114px;
+    overflow-y: scroll; /*прокручивание контента в мод.окне,а не в бекдропе*/
+  }
 }
 
 /*модальное окно*/
@@ -722,13 +764,18 @@ body {
 
   padding: 72px 24px 24px;
 }*/
-@media screen and (min-width: 428px) {
-  .backdrop {
-    padding-top: 96px;
-    padding-left: 18px;
-    padding-right: 18px;
-    padding-top: 114px;
-    overflow-y: scroll; /*прокручивание контента в мод.окне,а не в бекдропе*/
+/*(для телефонов)с320px тянется до 392px и имеет максим ширину 392px*/
+@media screen and (min-width: 320px) {
+  .modal {
+    max-width: 392px;
+    width: 100%;
+  }
+}
+/*(для планшетов) с 768px его макс ширина 408px*/
+@media screen and (min-width: 768px) {
+  .modal {
+    max-width: 408px;
+    width: 100%;
   }
 }
 
@@ -1967,6 +2014,14 @@ textarea {
 
   background-color: #2e2f42;
 }*/
+
+/*для телефона*/
+@media screen and (max-width: 767px) {
+  .footer-input-email {
+    margin-right: 0;
+    width: 100%;
+  }
+}
 
 .sabscribe-btn {
   display: inline-flex;
