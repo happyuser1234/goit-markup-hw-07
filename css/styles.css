@@ -161,6 +161,8 @@ body {
   line-height: var(--second-line-height);
   color: var(--second-color);
   letter-spacing: var(--second-letter-spacing);
+
+  margin-right: 76px;
 }
 .piece {
   color: var(--fourth-color);
@@ -173,9 +175,10 @@ body {
 /*Tablet-планшет div стал флексом, в котором навигация и контакты  т.e.его элементы стали в ряд*/
 @media screen and (min-width: 768px) {
   .menu-container {
-    max-width: 768px;
     display: flex;
-    gap: 121px;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
   }
 }
 
@@ -240,8 +243,6 @@ body {
 /*ul для контактов*/
 .header-contact {
   display: block;
-  padding-top: 16px;
-  padding-bottom: 16px;
   gap: 40px;
 }
 
@@ -265,6 +266,7 @@ body {
 }
 /*a ccылка для емейла и телефона */
 .header-contact-link {
+  font-size: var(--fifth-font-size); /*12px*/
   line-height: var(--first-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--text-color);
@@ -393,9 +395,12 @@ body {
 
 /*дополнительный класс в div-контейнере-обвертке,чтоб спозиционировать кнопку с крестиком */
 .mobile-menu-container {
+  display: flex;
+  flex-direction: column;
   position: relative;
   padding-top: 24px;
   padding-bottom: 40px;
+  height: 100%;
 }
 /*div(чтоб отодвинуть нижний список), в кот сидит кнопка(крестик)*/
 .mobile-menu-crose-btn {
@@ -423,7 +428,7 @@ body {
 
 /*список строниц (Studio,Portfolio,Contacts)*/
 .mobile-menu-set {
-  margin-bottom: 284px;
+  margin-bottom: auto;
 }
 /*ul для страниц(Studio,Portfolio,Contacts) mobile-menu*/
 .mobile-menu-items {
@@ -465,10 +470,15 @@ body {
 }
 .mobile-menu-contact-tel-link {
   font-weight: var(--second-font-weight);
-  font-size: var(--fourth-font-size);
+  font-size: 27px; /*27px*/
   line-height: var(--fifth-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--fourth-color);
+}
+@media screen and (min-width: 428px) {
+  .mobile-menu-contact-tel-link {
+    font-size: var(--fourth-font-size); /* 36px*/
+  }
 }
 
 .mobile-menu-contact-mailto-link {
@@ -485,8 +495,14 @@ body {
   list-style: none;
 
   justify-content: flex-start;
-  gap: 56px;
+  gap: 36px; /*для мобилки размером c 320px*/
   flex-wrap: wrap; /*flex-элементы могут занять несколько строк*/
+}
+/*c 428px gap меняется на 56px*/
+@media screen and (min-width: 428px) {
+  .mobile-menu-list-icon {
+    gap: 56px;
+  }
 }
 
 /*li элемент ссылок соцсетей*/
@@ -546,10 +562,10 @@ body {
   margin-top: 0;
   margin-bottom: 72px;
 
+  max-width: 500px;
   text-align: center;
-
   font-weight: var(--second-font-weight);
-  font-size: var(--fourth-font-size);
+  font-size: var(--third-font-size);
   line-height: var(--fifth-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--first-color);
@@ -643,6 +659,9 @@ body {
   background-size: cover;
   background-position: center;
   background-color: var(--beckground-color-2);
+
+  max-width: 1440px; /*максимально растягивалась на 1440px*/
+  margin: 0 auto;
 }
 /*overlay*
 .overlay {
@@ -673,6 +692,7 @@ body {
         rgba(0, 0, 0, 0.7)
       ),
       url('../images/people-office-desktop@2x.jpg');
+    padding: 188px 0;
   }
 }
 
@@ -1230,7 +1250,7 @@ textarea {
   text-align: center;
 
   font-weight: var(--second-font-weight);
-  font-size: var(--fourth-font-size);
+  font-size: var(--first-font-size);
   line-height: var(--fifth-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--second-color);
