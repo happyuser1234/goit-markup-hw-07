@@ -255,15 +255,6 @@ body {
   }
 }
 
-/*a ccылка для емейла и телефона*/
-.header-contact-link {
-  line-height: var(--first-line-height);
-  letter-spacing: var(--first-letter-spacing);
-  color: var(--text-color);
-  font-style: normal;
-
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 /*a ccылка для емейла и телефона */
 .header-contact-link {
   font-size: var(--fifth-font-size); /*12px*/
@@ -273,6 +264,20 @@ body {
   font-style: normal;
 
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+/*a ccылка для емейла и телефона*
+.header-contact-link {
+  line-height: var(--first-line-height);
+  letter-spacing: var(--first-letter-spacing);
+  color: var(--text-color);
+  font-style: normal;
+
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}*/
+@media screen and (min-width: 1200px) {
+  .header-contact-link {
+    font-size: 16px;
+  }
 }
 .header-contact-link:hover {
   color: var(--third-color);
@@ -544,31 +549,36 @@ body {
 
   background: var(--second-color);
 }
-@media screen and (min-width: 428px) {
-  .hero-title {
-    max-width: 428px;
-  }
-}
-@media screen and (min-width: 428px) {
-  .hero-title {
-    display: block;
-  }
-}
 
-/*главный заголовок в нero*/
+/*h1*/
 .hero-title {
-  display: block;
-  margin: 0 auto; /*для центрирования текста*/
+  max-width: 320px; /*максимальный размер h1*/
+  margin-left: auto;
+  margin-right: auto;
+
   margin-top: 0;
   margin-bottom: 72px;
 
-  max-width: 500px;
-  text-align: center;
-  font-weight: var(--second-font-weight);
-  font-size: var(--third-font-size);
-  line-height: var(--fifth-line-height);
-  letter-spacing: var(--first-letter-spacing);
+  font-size: 36px;
+  line-height: 1.11;
+  letter-spacing: 0.02em;
   color: var(--first-color);
+}
+
+@media screen and (min-width: 768px) {
+  .hero-title {
+    max-width: 500px;
+    font-size: 56px;
+    line-height: 1.07;
+
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .hero-title {
+    margin-bottom: 48px;
+  }
 }
 
 .hero-btn {
@@ -680,6 +690,12 @@ body {
   background-position: center;
   background-color: var(--beckground-color-2);
 }
+/* padding: 188px 0; для desktop*/
+@media screen and (min-width: 1200px) {
+  .overlay {
+    padding: 188px 0;
+  }
+}
 
 /*для desktop от 2x и >: новое изображение скаченное из Figma в jpg-формате(оптим-ное в sqoosh в mozJPG-формате)*/
 @media screen and (min-device-pixel-ratio: 2) and (min-width: 1200px),
@@ -692,7 +708,6 @@ body {
         rgba(0, 0, 0, 0.7)
       ),
       url('../images/people-office-desktop@2x.jpg');
-    padding: 188px 0;
   }
 }
 
@@ -1169,7 +1184,7 @@ textarea {
   padding-bottom: 0;
 }
 
-@media screen and (max-width: 1157px) {
+@media screen and (max-width: 1199px) {
   .solutions {
     padding-top: 96px;
     padding-bottom: 96px;
@@ -1188,6 +1203,13 @@ textarea {
   justify-content: center;
   gap: 24px;
 }
+/*UL*
+.solutions-list {
+  display: flex;
+  list-style: none;
+  justify-content: center;
+  gap: 24px;
+}
 /*до ширины 767px ul-ка становится в столбик */
 @media screen and (max-width: 767px) {
   .solutions-list {
@@ -1199,22 +1221,15 @@ textarea {
 @media screen and (min-width: 768px) {
   .solutions-list {
     flex-wrap: wrap; /*флексэл-ты выстраиваются в несколько строк*/
+    row-gap: 72px; /*pасcтояние между строк*/
   }
-}
-
-/*UL*
-.solutions-list {
-  display: flex;
-  list-style: none;
-  justify-content: center;
-  gap: 24px;
 }
 
 /*li для svg*/
 .solution-item {
   flex-basis: calc((100% - 72px) / 4);
 }
-@media screen and (max-width: 1157px) {
+@media screen and (max-width: 1199px) {
   .solution-item {
     flex-basis: calc((100% - 24px) / 2);
   }
@@ -1237,7 +1252,7 @@ textarea {
   justify-content: center;
 }
 
-@media screen and (max-width: 1157px) {
+@media screen and (max-width: 1199px) {
   .solution-svg {
     display: none;
   }
@@ -1255,6 +1270,17 @@ textarea {
   letter-spacing: var(--first-letter-spacing);
   color: var(--second-color);
 }
+/*text-align: start;*/
+@media screen and (min-width: 768px) {
+  .solution-subtitle {
+    text-align: start;
+  }
+}
+@media screen and (max-width: 1199px) {
+  .solution-subtitle {
+    font-size: var(--fourth-font-size); /*36px*/
+  }
+}
 
 /*h3-подзаголовок*
 .solution-subtitle {
@@ -1268,6 +1294,8 @@ textarea {
   letter-spacing: var(--first-letter-spacing);
   color: var(--second-color);
 }*/
+@media screen and (min-width: 768px) {
+}
 
 /*до ширины 767px пусть у всех li-к, кроме последней ,будет margin-bottom: 72px; */
 @media screen and (max-width: 767px) {
@@ -1276,10 +1304,10 @@ textarea {
   }
 }
 
-/*P-текст*/
+/*P-текст(размер шрифта 400px(наслед из body),не пишем здесь т.к.он прописан в боди как основной */
 .solution-text {
   text-align: left;
-  font-weight: var(--typical-font-weight);
+
   line-height: var(--first-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--text-color);
@@ -1292,18 +1320,18 @@ textarea {
   line-height: var(--first-line-height);
   letter-spacing: var(--first-letter-spacing);
   color: var(--text-color);
+}*/
+/*768px-1199px размер шрифта-500px (font-weight: var(--typical-font-weight))*/
+@media screen and (min-width: 768px) and (max-width: 1199px) {
+  .solution-text {
+    font-weight: var(--typical-font-weight); /*500px*/
+  }
 }
 
 /*section-cекция*
 .solutions {
   padding-bottom: 0;
 }
-
-
-
-
-
-
 
 /*h2*
 .section-title {
@@ -1776,6 +1804,12 @@ textarea {
     display: flex;
     flex-direction: column; /*стали в колонку по вертикали*/
     margin-right: 0; /*чтоб эти двум элементам придвинуться,т.е. перебить margin:120px в компьютерном варианте*/
+  }
+}
+/*для планшета с 768px и далее*/
+@media screen and (min-width: 768px) {
+  .footer-wrapper-content {
+    align-items: flex-start; /*элементы флекса стали в начале строки*/
   }
 }
 
